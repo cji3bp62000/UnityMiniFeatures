@@ -21,7 +21,7 @@ namespace UnityMiniFeatures.TimelineAnimationWeightSetter
             // weight を設定
             // set weight
             foreach (var output in outputList) {
-                output.SetWeight(weight);
+                output.SetWeight(weight * output.GetWeight());
             }
         }
     }
