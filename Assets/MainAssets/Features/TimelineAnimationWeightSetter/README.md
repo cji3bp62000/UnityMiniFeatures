@@ -48,8 +48,6 @@ By setting the output weight, you can blend the Timeline animation with original
 
 ### How to use
 
-english
-
 1. Attach the `TimelineAnimationWeightSetter` component to the same GameObject as `PlayableDirector`.
 2. Set the weight variable in the `TimelineAnimationWeightSetter` inspector and see the result.
 
