@@ -1,4 +1,4 @@
-﻿→ [english below](#TimelineAnimationWeightSetter_en)
+﻿→ [english below](#timelineanimationweightsetter_en)
 
 # TimelineAnimationWeightSetter
 

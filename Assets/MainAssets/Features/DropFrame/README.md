@@ -1,4 +1,4 @@
-﻿→ [english below](#DropFrame_Component_for_Animator_/_ParticleSystem)
+﻿→ [english below](#dropframe-component-for-animator--particleSystem)
 
 # AnimatorDropFrame / ParticleSystemDropFrame
 
