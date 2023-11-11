@@ -13,6 +13,15 @@ Every feature page has a simple ReadMe below.
 
 <br/>
 
+# Editor Features
+
+1. [EditorHeaderButtons](./Assets/MainAssets/Features/Editor/UnityInternalEditor/EditorHeaderButtons)
+   * Add 2 buttons to the header of the component inspector:
+      * Show Properties Button
+      * Switch Debug Mode Button (internal debug mode included)
+
+<br/>
+
 # Extensions
 
 Handy extension methods for native/built-in types.
