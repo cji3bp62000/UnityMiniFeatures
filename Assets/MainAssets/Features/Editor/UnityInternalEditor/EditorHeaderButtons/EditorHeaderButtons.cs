@@ -28,7 +28,7 @@ namespace UnityMiniFeatures.Editor
             // draw icon
             var defaultGUIColor = GUI.color;
             GUI.color = InspectorModeColorDic[(int)propertyEditor.inspectorMode];
-            var clicked = EditorGUI.DropdownButton(rectangle, DebugIcon, FocusType.Passive, EditorStyles.iconButton);
+            var clicked = EditorGUI.DropdownButton(rectangle, SwitchDebugModeIcon, FocusType.Passive, EditorStyles.iconButton);
             GUI.color = defaultGUIColor;
 
             // return if icon not clicked
