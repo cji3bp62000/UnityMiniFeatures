@@ -22,12 +22,22 @@ namespace UnityMiniFeatures.Editor
         [EditorHeaderItem(typeof(Component), -999)]
         public static bool DrawSwitchDebugModeButton(Rect rectangle, Object[] targets)
         {
-            if (!EditorGUI.DropdownButton(rectangle, SwitchDebugModeIcon, FocusType.Passive, EditorStyles.iconButton)) return true;
+            // dont draw anything if is not PropertyEditor
+            if (GUIView.current is not HostView { actualView: PropertyEditor propertyEditor }) return false;
 
-            // 現在の InspectorWindow を取得
-            var currentPropertyEditor = EditorWindow.mouseOverWindow as PropertyEditor;
-            if (!currentPropertyEditor) return true;
-            currentPropertyEditor.inspectorMode = SwitchInspectorMode(currentPropertyEditor.inspectorMode);
+            // draw icon
+            var defaultGUIColor = GUI.color;
+            GUI.color = InspectorModeColorDic[(int)propertyEditor.inspectorMode];
+            var clicked = EditorGUI.DropdownButton(rectangle, DebugIcon, FocusType.Passive, EditorStyles.iconButton);
+            GUI.color = defaultGUIColor;
+
+            // return if icon not clicked
+            if (!clicked) {
+                return true;
+            }
+
+            // switch InspectorMode
+            propertyEditor.inspectorMode = SwitchInspectorMode(propertyEditor.inspectorMode);
             return true;
         }
 
@@ -40,6 +50,13 @@ namespace UnityMiniFeatures.Editor
                 _ => InspectorMode.Normal,
             };
         }
+
+        private static Dictionary<int, Color> InspectorModeColorDic = new()
+        {
+            [(int)InspectorMode.Normal] = Color.white,
+            [(int)InspectorMode.Debug] = new Color(1f, 0.8f, 0f),
+            [(int)InspectorMode.DebugInternal] = new Color(0.918f, 0f, 0f),
+        };
 
         /// <summary>
         /// プロパティボタン表示 Show Properties Button
