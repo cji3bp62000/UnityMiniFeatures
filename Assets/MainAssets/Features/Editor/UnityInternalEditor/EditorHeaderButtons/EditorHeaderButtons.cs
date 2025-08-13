@@ -19,7 +19,7 @@ namespace UnityMiniFeatures.Editor
         /// <summary>
         /// デバッグ表示 Show Debug Switch Button
         /// </summary>
-        [EditorHeaderItem(typeof(Component), -999)]
+        [EditorHeaderItem(typeof(Object), -999)]
         public static bool DrawSwitchDebugModeButton(Rect rectangle, Object[] targets)
         {
             // dont draw anything if is not PropertyEditor
@@ -61,7 +61,7 @@ namespace UnityMiniFeatures.Editor
         /// <summary>
         /// プロパティボタン表示 Show Properties Button
         /// </summary>
-        [EditorHeaderItem(typeof(Component), -998)]
+        [EditorHeaderItem(typeof(Object), -998)]
         public static bool DrawShowPropertiesButton(Rect rectangle, Object[] targets)
         {
             if (!EditorGUI.DropdownButton(rectangle, ShowPropertiesIcon, FocusType.Passive, EditorStyles.iconButton)) return true;
